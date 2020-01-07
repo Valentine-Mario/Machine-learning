@@ -31,6 +31,7 @@ t1= time()
 predict=clf.predict(features_test)
 print predict[10], predict[26], predict[50]
 print "prediction time: ", round(time()- t1, 3), "s"
+#count how many of each items are in the array using numpy collections
 collection_num=collections.Counter(predict)
 print collection_num
 accuracy= accuracy_score(labels_test, predict)
