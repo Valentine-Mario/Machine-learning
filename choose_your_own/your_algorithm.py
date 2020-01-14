@@ -3,6 +3,10 @@
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -31,7 +35,24 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
+#for knn
+clf = KNeighborsClassifier(n_neighbors=3)
+clf.fit(features_train, labels_train)
+predict= clf.predict(features_test)
 
+#adaboost
+# clf = AdaBoostClassifier(n_estimators=100, random_state=0)
+# clf.fit(features_train, labels_train)
+# predict=clf.predict(features_test)
+
+#random forest
+# clf = RandomForestClassifier(max_depth=2, random_state=0)
+# clf.fit(features_train, labels_train)
+# predict=clf.predict(features_test)
+
+
+accuracy=accuracy_score(predict, labels_test)
+print(accuracy)
 
 
 
