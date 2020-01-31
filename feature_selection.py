@@ -38,6 +38,9 @@ print(df[["LSTAT","PTRATIO"]].corr())
 #rm and lsat seem to be highly correlated to each other
 print(df[["RM","LSTAT"]].corr())
 
+
+
+
 #embedded method using lasso
 reg = LassoCV()
 reg.fit(X, y)
