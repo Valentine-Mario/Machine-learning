@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 'exec(%matplotlib inline)'
 
-
+#perform pca before feature selection
 url = "/home/dead/anaconda3/lib/python3.7/site-packages/sklearn/datasets/data/iris.csv"
 # load dataset into Pandas DataFrame
 df = pd.read_csv(url, names=['sepal length','sepal width','petal length','petal width','target'])
